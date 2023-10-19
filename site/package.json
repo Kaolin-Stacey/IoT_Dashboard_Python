@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "gpio": "^0.2.10"
+    "gpio": "^0.2.10",
+    "jquery": "^3.7.1",
+    "onoff": "^6.0.3"
   }
 }
