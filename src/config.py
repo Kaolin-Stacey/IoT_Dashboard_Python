@@ -11,8 +11,8 @@ ledPin = 20
 
 fanOn = False
 fanEnablePin = 17
-fanInput1Pin = 27
-fanInput2Pin = 4
+fanInput1Pin = 4
+fanInput2Pin = 27
 
 
 temperatureVal = 0

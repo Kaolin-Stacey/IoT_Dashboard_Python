@@ -33,6 +33,6 @@ def updatePowerButton(n_intervals):
     Output('fan_image','src'),
     Input('fanPowerButton','on')
 )
-def isLedOn(on):
+def isFanOn(on):
     config.fanOn = on
     return f'./assets/images/fan-{"on" if config.fanOn else "off"}.png'

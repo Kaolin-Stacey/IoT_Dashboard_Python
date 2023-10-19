@@ -7,3 +7,7 @@ thread_dht.start()
 import services.email as emailService
 thread_email = Thread(target=emailService.checkTemperatureSendEmail, name="emailService")
 thread_email.start()
+
+import services.fan as fanService
+thread_fan = Thread(target=fanService.checkFan,name="fanService")
+thread_fan.start()

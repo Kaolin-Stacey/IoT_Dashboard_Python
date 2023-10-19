@@ -2,7 +2,7 @@ from dash import html, dcc
 from components import sidebar
 from content import content
 from config import app
-import threads
+
 
 
 CONTENT_STYLE = {
@@ -23,4 +23,9 @@ app.layout = html.Div([
     
 if __name__ == "__main__":
     import setupGPIO
-    app.run_server(debug=True)
+    import threads
+    try:
+        app.run_server(debug=True)
+    except KeyboardInterrupt:
+        import RPi.GPIO as GPIO
+        GPIO.cleanup() 

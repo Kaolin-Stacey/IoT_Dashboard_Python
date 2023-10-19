@@ -13,6 +13,7 @@ from config import host_email, password, recipient_email
 from config import temperatureVal, temperatureThreshold
 
 def sendEmail():
+
     subject = "Subject: FAN CONTROL"
     body = f"Your home temperature is greater than {temperatureThreshold}. Do you wish to turn on the fan? Reply YES if so."
     em = EmailMessage()
@@ -21,7 +22,9 @@ def sendEmail():
     em['Subject'] = subject
     em.set_content(body)
 
-    with smtplib.SMTP_SSL(f'smtp.gmail.com') as server:
+
+    with smtplib.SMTP_SSL('smtp.gmail.com') as server:
+
         server.connect("smtp.gmail.com","465")
         server.login(host_email, password)
         server.sendmail(host_email,recipient_email,em.as_string())
@@ -73,6 +76,7 @@ def receiveEmail():
 
 def checkTemperatureSendEmail():
     while(True):
+        from config import temperatureVal
         if config.fanOn or temperatureVal < temperatureThreshold or config.waitingOnReply: 
             sleep(5)
             continue
