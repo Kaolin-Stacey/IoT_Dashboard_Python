@@ -3,6 +3,7 @@ import dash_daq as daq
 
 from config import app
 import config
+import services.led
 
 # images taken from icons8.com
 # https://icons8.com/icon/zu4XG69PVx2m/light-off
@@ -33,5 +34,6 @@ def updatePowerButton(n_intervals):
     Input('ledPowerButton','on')
 )
 def isLedOn(on):
+    services.led.toggleLed()
     config.ledOn = on
     return f'./assets/images/light-{"on" if config.ledOn else "off"}.png'

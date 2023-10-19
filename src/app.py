@@ -22,4 +22,5 @@ app.layout = html.Div([
     ])
     
 if __name__ == "__main__":
+    import setupGPIO
     app.run_server(debug=True)

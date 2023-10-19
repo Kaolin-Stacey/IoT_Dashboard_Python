@@ -1,3 +1,5 @@
+import RPi.GPIO as GPIO
+
 # global variables
 
 import dash
@@ -5,13 +7,18 @@ import dash_bootstrap_components as dbc
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, "./assets/styles/style.css"])
 
 ledOn = False
-fanOn = False
+ledPin = 20
 
-temperatureVal = 26
+fanOn = False
+fanEnablePin = 17
+fanInput1Pin = 27
+fanInput2Pin = 4
+
+
+temperatureVal = 0
 temperatureThreshold = 25
 
-humidityVal = 46
-
+humidityVal = 0
 
 
 

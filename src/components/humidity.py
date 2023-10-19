@@ -2,8 +2,6 @@ from dash import Input, Output
 import dash_daq as daq
 
 from config import app
-import config
-
 component = daq.Gauge(
     id='humidity_display',
     value=0,
@@ -19,4 +17,5 @@ component = daq.Gauge(
     Input('interval-component','n_intervals')
 )
 def updateHumidity(n_intervals):
+    import config
     return config.humidityVal

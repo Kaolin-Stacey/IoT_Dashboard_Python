@@ -88,7 +88,6 @@ def checkTemperatureSendEmail():
                 break
             sleep(1)
 
-        config.searchDate = None
         config.waitingOnReply = False
         
         sleep(900) # this will make the code wait 15 minutes before executing again

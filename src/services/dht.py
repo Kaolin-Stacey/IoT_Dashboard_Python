@@ -10,7 +10,7 @@ dht = DHT.DHT(DHTPin)
 def getData():
     while(True):
         config.temperatureVal, config.humidityVal = getDHT()
-        # print(temperatureVal, humidityVal)
+        # print(config.temperatureVal, config.humidityVal)
         sleep(0.1)
 
 def getDHT():

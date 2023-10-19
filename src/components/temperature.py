@@ -2,7 +2,6 @@ from dash import Input, Output
 import dash_daq as daq
 
 from config import app
-import config
 
 component = daq.Thermometer(
     id='temperature_display',
@@ -18,4 +17,6 @@ component = daq.Thermometer(
     Input('interval-component','n_intervals')
 )
 def updateTemperature(n_intervals):
+    import config
+    # print(config.temperatureVal)
     return config.temperatureVal
