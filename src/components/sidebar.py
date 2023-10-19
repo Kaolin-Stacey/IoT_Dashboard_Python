@@ -1,4 +1,7 @@
-from dash import html
+from dash import html, Input, Output
+import dash_daq as daq
+from config import app
+from datetime import datetime
 
 SIDEBAR_STYLE = {
     "position": "fixed",
@@ -12,8 +15,19 @@ SIDEBAR_STYLE = {
 
 sidebar = html.Div(
     [
-        html.H2("Sidebar",className="display-4"),
+        daq.LEDDisplay(
+            id='digital_clock_led',
+            value="",
+            color="black",
+            backgroundColor="transparent"
+        ),
         html.P("Sidebar layout for project", className="lead"),
     ],
     style=SIDEBAR_STYLE
 )
+@app.callback(
+    Output('digital_clock_led','value'),
+    Input('interval-component','n_intervals')
+)
+def update_time(n_intervals):
+    return datetime.now().strftime("%H:%M")

@@ -1,8 +1,8 @@
-import dash
-from dash import html
-import dash_bootstrap_components as dbc
+from dash import html, dcc
 from components import sidebar
 from content import content
+from config import app
+import threads
 
 CONTENT_STYLE = {
     "margin-left": "18rem",
@@ -10,11 +10,14 @@ CONTENT_STYLE = {
     "padding": "2rem 1 rem"
 }
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, "./styles/stylesheet.css"])
-
 app.layout = html.Div([
         sidebar.sidebar,
-        html.Div(content, id="page-content", style=CONTENT_STYLE)
+        html.Div(content, id="page-content", style=CONTENT_STYLE),
+        dcc.Interval(
+            id='interval-component',
+            interval=1000,
+            n_intervals=0
+        )
     ])
     
 if __name__ == "__main__":
