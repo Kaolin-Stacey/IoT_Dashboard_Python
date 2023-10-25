@@ -1,0 +1,36 @@
+.content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: 50% 50%;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.content > div {
+    padding: 5%;
+}
+
+.ledDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.ledDiv img {
+    width: 80px;
+    height: 80px;
+}
+
+.sidebar {
+    background-color: #8D775F;
+    color: white;
+}
+
+.timeLed, .timeLed * {
+    border: none !important;
+}

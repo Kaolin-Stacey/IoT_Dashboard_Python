@@ -10,7 +10,9 @@ component = daq.Gauge(
     min=20,
     max=70,
     units="%",
-    showCurrentValue=True
+    showCurrentValue=True,
+    label='Humidity',
+    color="#FF6B6B"
 )
 @app.callback(
     Output('humidity_display','value'),

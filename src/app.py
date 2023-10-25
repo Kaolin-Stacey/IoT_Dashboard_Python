@@ -7,12 +7,12 @@ import threads
 CONTENT_STYLE = {
     "margin-left": "18rem",
     "margin-right": "2rem",
-    "padding": "2rem 1 rem"
+    "padding": "2rem 1rem"
 }
 
 app.layout = html.Div([
         sidebar.sidebar,
-        html.Div(content, id="page-content", style=CONTENT_STYLE),
+        html.Div(content, id="page-content", className="content", style=CONTENT_STYLE),
         dcc.Interval(
             id='interval-component',
             interval=1000,

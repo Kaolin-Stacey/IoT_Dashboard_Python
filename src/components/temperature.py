@@ -9,8 +9,19 @@ component = daq.Thermometer(
     value=0,
     min=10,
     max=30,
-    showCurrentValue=True
+    showCurrentValue=True,
+    label='Temperature',
+    color="#FF6B6B"
 )
+@app.callback(
+    Output('alert-auto','is_open'),
+    Input('interval-component','n_intervals')
+)
+def sendEmail(n_intervals):
+    if (config.temperatureVal > 24):
+        print('Sending email')
+        return True
+
 @app.callback(
     Output('temperature_display','value'),
     Input('interval-component','n_intervals')
