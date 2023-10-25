@@ -15,13 +15,13 @@
     padding: 5%;
 }
 
-.ledDiv{
+.stateDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
-.ledDiv img {
+.stateDiv img {
     width: 80px;
     height: 80px;
 }

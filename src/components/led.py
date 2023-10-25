@@ -19,7 +19,7 @@ component = html.Div(
             size=80
         )
     ],
-    className="ledDiv"
+    className="stateDiv"
 )
 @app.callback(
     Output('ledPowerButton','on'),

@@ -4,6 +4,7 @@ from content import content
 from config import app
 import threads
 
+
 CONTENT_STYLE = {
     "margin-left": "18rem",
     "margin-right": "2rem",

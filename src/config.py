@@ -5,16 +5,22 @@ import dash_bootstrap_components as dbc
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, "./assets/styles/style.css"])
 
 ledOn = False
-temperatureVal = 22
+fanOn = False
+
+temperatureVal = 26
+temperatureThreshold = 25
+
 humidityVal = 46
 
-fanOn = False
+
+
 
 
 # email
-sender_email = "k29263306@gmail.com"
-recipient_email = ""
+host_email = "k29263306@gmail.com"
+password = "bumsqpvbnmnmuljr"
 
-password = ""
-email_host = "gmail.com"
-email_port = "465"
+recipient_email = "kaolin.stacey@gmail.com"
+
+waitingOnReply = False
+searchDate = None
