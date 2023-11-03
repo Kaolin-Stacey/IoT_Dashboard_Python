@@ -9,29 +9,44 @@
 </head>
 <body>
     <aside>
-        <div class="timeDiv">
-            <span id="timeSpan">12:38</span>
-        </div>
-        <p>Other</p>
+        <img src="./assets/images/dashboard.png" alt="" srcset="">
+        <nav>
+            <span>list...</span>
+        </nav>
     </aside>
-    <main>
-        <div style="background-color: coral;">
-            <h2>Temperature</h2>
-            <span>24.3</span>
-            <span>&deg;</span>
+    <section class="rightSide">
+        <header>
+            <span id="timeSpan"></span>
+            <h1>Welcome Kaolin and Eris!</h1>
+        </header>
+        <div class="data">
+            <div class="values">
+                <div class="temperature">
+                    <h2>Temperature</h2>
+                    <span id="temperature_span">24.3</span>
+                    <span>&deg;C</span>
+                </div>
+                <div class="humidity">
+                    <h2>Humidity</h2>
+                    <span id="humidity_span">54</span>
+                    <span>%</span>
+                </div>
+                <div class="light_level">
+                    <h2>Light Level</h2>
+                    <span id="light_level_Span">437</span>
+                    <span>Lumens</span>
+                </div>
+                <div class="last_div">
+                    <h2>Last Div</h2>
+                    <span id="last_div_span">0</span>
+                    <span>Void</span>
+                </div>
+            </div>
+
         </div>
-        <div style="background-color: deepskyblue;">
-            <h2>Humidity</h2>
-            <span>41.2</span>
-            <span>%</span>
-        </div>
-        <div style="background-color: seagreen;">
-            <h2>Light</h2>
-        </div>
-        <div style="background-color: palevioletred;">
-            <h2>Fan</h2>
-        </div>
-    </main>
+
+    </section>
+
     <script src="./scripts/time.js"></script>
 </body>
 </html>
