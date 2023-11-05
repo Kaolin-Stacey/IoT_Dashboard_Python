@@ -1,0 +1,58 @@
+@import url('./header.css');
+@import url('./values.css');
+@import url('./aside.css');
+@import url('./inputs.css');
+
+@font-face {
+    font-family: Lato;
+    src: url('../assets/fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: Permanent-Marker;
+    src: url('../assets/fonts/Permanent_Marker/PermanentMarker-Regular.ttf');
+}
+
+:root {
+    --bg: #efefef;
+    --wenge: #54494bff;
+    --gray: #7e8287ff;
+    --ash-gray: #9da39aff;
+    --old-rose: #b98389ff;
+    --raspberry: #db2955ff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+
+body { 
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+}
+
+aside {
+    height: 100%;
+    width: 15%;
+
+    background-color: var(--wenge);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 50px;
+
+    user-select: none;
+}
+
+section.rightSide {
+    flex-grow: 2;
+    background-color: var(--bg);
+}
+

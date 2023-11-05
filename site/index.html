@@ -3,15 +3,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/thermometer.css">
+    <link rel="stylesheet" href="./styles/base.css">
     <title>IoT Dashboard</title>
 </head>
 <body>
     <aside>
-        <img src="./assets/images/dashboard.png" alt="" srcset="">
+        <div class="title">
+            <img src="./assets/images/dashboard.png" alt="" srcset="">
+            <h1>IoT Dashboard</h1>
+        </div>
         <nav>
-            <span>list...</span>
         </nav>
     </aside>
     <section class="rightSide">
@@ -43,10 +44,19 @@
                 </div>
             </div>
 
+            <div class="inputs">
+                <div class="input-div">
+                    <img src="./assets/images/fan.png" alt="">
+                </div>
+                <div class="input-div">
+                    <img class="off" src="./assets/images/light.png" alt="">
+                </div>
+            </div>
+
+
         </div>
 
     </section>
-
     <script src="./scripts/time.js"></script>
 </body>
 </html>
