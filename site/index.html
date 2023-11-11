@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>IoT Dashboard</title>
 </head>
 <body>
@@ -37,15 +38,10 @@
                     <span id="light_level_Span">437</span>
                     <span>Lumens</span>
                 </div>
-                <div class="last_div">
-                    <h2>Last Div</h2>
-                    <span id="last_div_span">0</span>
-                    <span>Void</span>
-                </div>
             </div>
 
             <div class="inputs">
-                <div class="input-div">
+                <div class="input-div" id="fanInput">
                     <img src="./assets/images/fan.png" alt="">
                 </div>
                 <div class="input-div" id="lightInput">
@@ -57,7 +53,8 @@
         </div>
 
     </section>
+    <script src="./scripts/require.js"></script>
     <script src="./scripts/time.js"></script>
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" type="module"></script>
 </body>
 </html>
