@@ -11,3 +11,7 @@ thread_email.start()
 import services.fan as fanService
 thread_fan = Thread(target=fanService.checkFan,name="fanService")
 thread_fan.start()
+
+import services.threshold as thresholdService
+thread_threshold = Thread(target=thresholdService.checkLightThreshold, name="thresholdService")
+thread_threshold.start()

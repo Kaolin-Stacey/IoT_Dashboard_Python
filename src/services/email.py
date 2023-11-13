@@ -12,10 +12,10 @@ import config
 from config import host_email, password, recipient_email
 from config import temperatureVal, temperatureThreshold
 
-def sendEmail():
+def sendEmail(msg):
 
     subject = "Subject: FAN CONTROL"
-    body = f"Your home temperature is greater than {temperatureThreshold}. Do you wish to turn on the fan? Reply YES if so."
+    body = msg
     em = EmailMessage()
     em['From'] = host_email
     em['To'] = recipient_email
@@ -84,7 +84,7 @@ def checkTemperatureSendEmail():
         config.waitingOnReply = True
         config.searchDate = datetime.now(pytz.UTC)
 
-        sendEmail()
+        sendEmail(f"Your home temperature is greater than {temperatureThreshold}. Do you wish to turn on the fan? Reply YES if so.")
 
         for i in range(30):
             if receiveEmail():

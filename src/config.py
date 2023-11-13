@@ -9,6 +9,9 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, "./assets/
 ledOn = False
 ledPin = 20
 
+lightVal = 0
+lightThreshold = 400
+
 fanOn = False
 fanEnablePin = 17
 fanInput1Pin = 4
