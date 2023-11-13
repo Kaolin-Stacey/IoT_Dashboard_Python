@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/base.css" type="text/css">
+    <script src="./scripts/jquery-3.7.1.min.js"></script>
+    <script src="./scripts/core.js" type="module"></script>
+    <title>IoT Dashboard</title>
+</head>
+<body>
+    <aside>
+        <div class="title">
+            <img src="./assets/images/dashboard.png" alt="" srcset="">
+            <h1>IoT Dashboard</h1>
+        </div>
+        <nav>
+        </nav>
+    </aside>
+    <section class="rightSide">
+        <header>
+            <span id="timeSpan"></span>
+            <h1>Welcome Kaolin and Eris!</h1>
+        </header>
+        <div class="data">
+            <div class="values">
+                <div class="temperature">
+                    <h2>Temperature</h2>
+                    <span id="temperature_span">24.3</span>
+                    <span>&deg;C</span>
+                </div>
+                <div class="humidity">
+                    <h2>Humidity</h2>
+                    <span id="humidity_span">54</span>
+                    <span>%</span>
+                </div>
+                <div class="light_level">
+                    <h2>Light Level</h2>
+                    <span id="light_level_Span">437</span>
+                    <span>Lumens</span>
+                </div>
+            </div>
+
+            <div class="inputs">
+                <div class="input-div" id="fanInput">
+                    <img src="./assets/images/fan.png" alt="">
+                </div>
+                <div class="input-div" id="lightInput">
+                    <img class="off" src="./assets/images/light.png" alt="">
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+    <script src="./scripts/time.js"></script>
+    <script src="./scripts/index.js" type="module" ></script>
+    <script type="py" src="./python/index.py" config="./python/pyscript.json"></script>
+</body>
+</html>
