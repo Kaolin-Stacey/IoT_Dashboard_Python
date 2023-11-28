@@ -34,3 +34,9 @@ recipient_email = "kaolin.stacey@gmail.com"
 
 waitingOnReply = False
 searchDate = None
+
+# user
+current_user = None
+
+# bluetooth
+nearby_devices = None
