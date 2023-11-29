@@ -33,15 +33,21 @@ sidebar = html.Div(
             is_open=False,
             duration=5000
         ),
-        html.Span("",className="current_user")
+        html.Span("",id="current_user"),
+        html.Span("",id="temp_thres"),
+        html.Span("",id="humid_thres"),
+        html.Span("",id="light_thres"),
     ],
     className="sidebar",
     style=SIDEBAR_STYLE
 )
 @app.callback(
     Output('digital_clock_led','value'),
-    Output('current_user','value'),
+    Output('current_user','children'),
+    Output('temp_thres','children'),
+    Output('humid_thres','children'),
+    Output('light_thres','children'),
     Input('interval-component','n_intervals')
 )
 def update_time(n_intervals):
-    return datetime.now().strftime("%H:%M:%S"), config.current_user
+    return datetime.now().strftime("%H:%M:%S"), config.current_user, config.temperatureThreshold, config.humidityThreshold, config.lightThreshold

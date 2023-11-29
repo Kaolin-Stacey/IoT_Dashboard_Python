@@ -10,11 +10,10 @@ import pytz
 
 import config
 from config import host_email, password, recipient_email
-from config import temperatureVal, temperatureThreshold
 
 def sendEmail(msg):
 
-    subject = "Subject: FAN CONTROL"
+    subject = "Subject: IoT Home"
     body = msg
     em = EmailMessage()
     em['From'] = host_email
@@ -70,25 +69,28 @@ def receiveEmail():
 
                     if "yes" in mail_content.lower():
                         print('replied with yes')
+                        import services.fan as fan
+                        config.fanOn = True
+                        fan.toggleFan()
                         return True
     return False
 
 
 def checkTemperatureSendEmail():
     while(True):
-        from config import temperatureVal
-        if config.fanOn or temperatureVal < temperatureThreshold or config.waitingOnReply: 
+        import config
+        print("Waiting on reply: " + "yes" if config.waitingOnReply else "no")
+        if config.fanOn or config.temperatureVal < config.temperatureThreshold or config.waitingOnReply: 
             sleep(5)
             continue
 
         config.waitingOnReply = True
         config.searchDate = datetime.now(pytz.UTC)
 
-        sendEmail(f"Your home temperature is greater than {temperatureThreshold}. Do you wish to turn on the fan? Reply YES if so.")
+        sendEmail(f"Your home temperature is greater than {config.temperatureThreshold}. Do you wish to turn on the fan? Reply YES if so.")
 
-        for i in range(30):
+        for i in range(60):
             if receiveEmail():
-                config.fanOn = True
                 break
             sleep(1)
 

@@ -4,4 +4,4 @@ import config
 
 def toggleLed():
     from config import ledOn
-    GPIO.output(config.ledPin, ledOn)
+    GPIO.output(config.ledPin, not ledOn)

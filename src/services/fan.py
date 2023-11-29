@@ -1,15 +1,14 @@
 import RPi.GPIO as GPIO
 
 import config
+from time import sleep
 
 def toggleFan():
-    from config import fanOn
-    GPIO.output(config.fanInput2Pin,fanOn)
+    import config
+    GPIO.output(config.fanInput2Pin,config.fanOn)
 
 def checkFan():
-    fanOnTmp = False
+    import services.email as em
     while(True):
-        from config import fanOn
-        if config.fanOn != fanOnTmp:
-            fanOnTmp = config.fanOn
-            toggleFan()
+        em.checkTemperatureSendEmail()
+                

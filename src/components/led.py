@@ -17,17 +17,18 @@ component = html.Div(
         daq.PowerButton(
             id="ledPowerButton",
             color="#FF6B6B",
-            size=80
+            size=80,
+            on=False
         )
     ],
     className="stateDiv"
 )
-@app.callback(
-    Output('ledPowerButton','on'),
-    Input('interval-component','n_intervals')
-)
-def updatePowerButton(n_intervals):
-    return config.ledOn
+# @app.callback(
+#     Output('ledPowerButton','on'),
+#     Input('interval-component','n_intervals')
+# )
+# def updatePowerButton(n_intervals):
+#     return config.ledOn
 
 @app.callback(
     Output('light_image','src'),

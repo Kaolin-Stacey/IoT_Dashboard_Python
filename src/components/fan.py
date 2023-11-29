@@ -16,18 +16,18 @@ component = html.Div(
         daq.PowerButton(
             id="fanPowerButton",
             color="#FF6B6B",
-            size=80
+            size=80,
+            on=False
         )
     ],
     className="stateDiv"
 )
 @app.callback(
-    Output('fanPowerButton','on'),
     Output('alert-auto','is_open'),
     Input('interval-component','n_intervals')
 )
 def updatePowerButton(n_intervals):
-    return config.fanOn, config.waitingOnReply
+    return config.waitingOnReply
 
 @app.callback(
     Output('fan_image','src'),
@@ -35,4 +35,6 @@ def updatePowerButton(n_intervals):
 )
 def isFanOn(on):
     config.fanOn = on
+    import services.fan as fan
+    fan.toggleFan()
     return f'./assets/images/fan-{"on" if config.fanOn else "off"}.png'

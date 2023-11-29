@@ -1,4 +1,4 @@
-from threading import Thread, Timer
+from threading import Thread
 
 import services.dht as tempService
 thread_dht = Thread(target=tempService.getData, name="dht")

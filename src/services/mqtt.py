@@ -19,13 +19,16 @@ def on_message(client, userdata, msg):
     if (topic == "IoT/rfid"):
         # print("Received message for rfid: " + message)
         import config
+        import services.email as email
         user = db.getUserByRFID(message.upper())
-        config.current_user = user.name
-        config.temperatureThreshold = user.temp_threshold
-        config.humidityThreshold = user.humidity_threshold
-        config.lightThreshold = user.light_threshold
-
-    # config.lightVal = int(str(msg.payload))
+        if (user == None):
+            db.addUser("Default",message.upper(),25,55,400)
+        user = db.getUserByRFID(message.upper())
+        config.current_user = user[1]
+        email.sendEmail("User `"+user[1]+"` has entered")
+        config.temperatureThreshold = user[3]
+        config.humidityThreshold = user[4]
+        config.lightThreshold = user[5]
 
 mqtt_client = mqtt.Client()
 mqtt_client.on_connect = on_connect
