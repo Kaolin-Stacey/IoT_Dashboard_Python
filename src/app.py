@@ -25,6 +25,7 @@ if __name__ == "__main__":
     import setupGPIO
     import threads
     try:
+        print("running app")
         app.run_server(debug=True)
     except KeyboardInterrupt:
         import RPi.GPIO as GPIO

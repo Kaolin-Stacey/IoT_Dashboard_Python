@@ -2,6 +2,7 @@ from dash import html, Input, Output
 import dash_bootstrap_components as dbc
 import dash_daq as daq
 from config import app
+import config
 from datetime import datetime
 
 SIDEBAR_STYLE = {
@@ -32,13 +33,15 @@ sidebar = html.Div(
             is_open=False,
             duration=5000
         ),
+        html.Span("",className="current_user")
     ],
     className="sidebar",
     style=SIDEBAR_STYLE
 )
 @app.callback(
     Output('digital_clock_led','value'),
+    Output('current_user','value'),
     Input('interval-component','n_intervals')
 )
 def update_time(n_intervals):
-    return datetime.now().strftime("%H:%M:%S")
+    return datetime.now().strftime("%H:%M:%S"), config.current_user

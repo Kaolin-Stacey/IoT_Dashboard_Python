@@ -15,3 +15,5 @@ thread_fan.start()
 import services.threshold as thresholdService
 thread_threshold = Thread(target=thresholdService.checkLightThreshold, name="thresholdService")
 thread_threshold.start()
+
+import services.mqtt as mqttService
