@@ -10,16 +10,13 @@ ledOn = False
 ledPin = 20
 
 lightVal = 0
-lightThreshold = 400
 
 fanOn = False
 fanEnablePin = 17
 fanInput1Pin = 4
 fanInput2Pin = 27
 
-
 temperatureVal = 0
-temperatureThreshold = 25
 
 humidityVal = 0
 
@@ -37,6 +34,9 @@ searchDate = None
 
 # user
 current_user = None
+temperatureThreshold = 25
+lightThreshold = 400
+humidityThreshold = 50
 
 # bluetooth
 nearby_devices = None

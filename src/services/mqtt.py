@@ -19,7 +19,11 @@ def on_message(client, userdata, msg):
     if (topic == "IoT/rfid"):
         # print("Received message for rfid: " + message)
         import config
-        config.current_user = db.getUserByRFID(message.upper())
+        user = db.getUserByRFID(message.upper())
+        config.current_user = user.name
+        config.temperatureThreshold = user.temp_threshold
+        config.humidityThreshold = user.humidity_threshold
+        config.lightThreshold = user.light_threshold
 
     # config.lightVal = int(str(msg.payload))
 
